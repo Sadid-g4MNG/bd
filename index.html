@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Ishfa 🎂</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(
+        circle at top,
+        #35203d 0%,
+        #17111e 48%,
+        #09090c 100%
+    );
+    color: white;
+}
+
+/* STAR BACKGROUND */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.9;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#ffc1dd 1px, transparent 1px);
+
+    background-size: 70px 70px, 120px 120px;
+
+    animation: starsMove 20s linear infinite;
+}
+
+@keyframes starsMove {
+    to {
+        background-position:
+            70px 70px,
+            120px 150px;
+    }
+}
+
+/* PAGE */
+
+.page {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.97);
+}
+
+.box {
+    text-align: center;
+    width: min(700px, 95vw);
+    z-index: 5;
+}
+
+/* SMALL TEXT */
+
+.small-text {
+    color: #f6abc9;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 11px;
+    margin-bottom: 18px;
+}
+
+/* QUESTIONS */
+
+.question {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(42px, 8vw, 85px);
+    font-weight: 400;
+    margin-bottom: 30px;
+
+    text-shadow:
+        0 0 35px rgba(255, 116, 173, 0.25);
+}
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: 1px solid rgba(255,255,255,0.45);
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    padding: 14px 38px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    backdrop-filter: blur(10px);
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    background: #ffd0e3;
+
+    color: #311524;
+
+    box-shadow:
+        0 12px 30px rgba(255,112,171,0.25);
+}
+
+/* RESPONSE TEXT */
+
+.response {
+    min-height: 35px;
+
+    margin-top: 25px;
+
+    color: #ffb4d1;
+
+    font-size: 16px;
+}
+
+/* BALLOONS */
+
+.balloon {
+    position: absolute;
+
+    bottom: -180px;
+
+    width: 55px;
+    height: 70px;
+
+    border-radius:
+        50% 50% 48% 48%;
+
+    opacity: 0.8;
+
+    animation:
+        floatUp linear infinite;
+
+    z-index: 1;
+}
+
+.balloon:before {
+    content: "";
+
+    position: absolute;
+
+    bottom: -8px;
+    left: 21px;
+
+    width: 12px;
+    height: 12px;
+
+    background: inherit;
+
+    transform: rotate(45deg);
+}
+
+.balloon:after {
+    content: "";
+
+    position: absolute;
+
+    top: 70px;
+    left: 27px;
+
+    width: 1px;
+    height: 90px;
+
+    background:
+        rgba(255,255,255,0.55);
+}
+
+@keyframes floatUp {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    to {
+        transform:
+            translateY(-120vh)
+            rotate(8deg);
+    }
+
+}
+
+/* BIRTHDAY CARD */
+
+.birthday-card {
+
+    width: min(480px, 94vw);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fb,
+            #ffe6f0
+        );
+
+    border-radius: 28px;
+
+    color: #321b28;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 100px
+        rgba(255,84,155,0.35);
+
+    animation:
+        popIn 0.8s
+        cubic-bezier(.2,1.4,.4,1)
+        both;
+
+    z-index: 5;
+}
+
+@keyframes popIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.55)
+            translateY(60px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+/* IMAGE */
+
+.photo {
+
+    width: 100%;
+
+    height: min(45vh, 430px);
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.message {
+    padding: 22px 24px 28px;
+}
+
+.message h2 {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    font-size:
+        clamp(38px, 7vw, 58px);
+
+    color: #e95293;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+/* TYPING TEXT */
+
+#typedText {
+
+    min-height: 115px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #704d60;
+}
+
+.cursor {
+
+    display: inline-block;
+
+    width: 2px;
+
+    height: 17px;
+
+    background: #e95293;
+
+    vertical-align: -3px;
+
+    animation:
+        blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+/* FIREWORKS */
+
+.firework {
+
+    position: fixed;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.particle {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    animation:
+        explode 1.4s ease-out forwards;
+}
+
+@keyframes explode {
+
+    to {
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            );
+
+        opacity: 0;
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width: 500px) {
+
+    .birthday-card {
+        width: 92vw;
+    }
+
+    .photo {
+        height: 38vh;
+    }
+
+    .message {
+        padding:
+            18px
+            18px
+            24px;
+    }
+
+    #typedText {
+        font-size: 13px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="stars"></div>
+
+<!-- BALLOONS -->
+
+<div id="balloons"></div>
+
+
+<!-- ===================== -->
+<!-- PAGE 1 -->
+<!-- ===================== -->
+
+<section
+class="page"
+id="page1">
+
+<div class="box">
+
+<div class="small-text">
+Important question
+</div>
+
+<div class="question">
+Are you Ishfa? 🤨
+</div>
+
+<div class="buttons">
+
+<button onclick="confirmIshfa()">
+YES
+</button>
+
+<button onclick="confirmIshfa()">
+YES
+</button>
+
+</div>
+
+<div
+class="response"
+id="ishfaResponse">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===================== -->
+<!-- PAGE 2 -->
+<!-- ===================== -->
+
+<section
+class="page hidden"
+id="page2">
+
+<div class="box">
+
+<div class="small-text">
+Now that we've established that...
+</div>
+
+<div class="question">
+Do you want to go<br>
+to the next page? 👀
+</div>
+
+<div class="buttons">
+
+<button onclick="goNext()">
+YES
+</button>
+
+<button
+id="noBtn"
+onclick="wrongAnswer()">
+
+NO
+
+</button>
+
+</div>
+
+<div
+class="response"
+id="wrongResponse">
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===================== -->
+<!-- BIRTHDAY PAGE -->
+<!-- ===================== -->
+
+<section
+class="page hidden"
+id="birthdayPage">
+
+<div class="birthday-card">
+
+<!-- YOUR IMAGE -->
+
+<img
+class="photo"
+src="birthday.jpg"
+alt="Birthday Ishfa">
+
+
+<div class="message">
+
+<h2>
+Happy Birthday Ishfa! 🎂
+</h2>
+
+<div id="typedText"></div>
+
+<span
+class="cursor"
+id="cursor">
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* ========================= */
+/* PAGE 1 */
+/* ========================= */
+
+function confirmIshfa() {
+
+    const response =
+        document.getElementById(
+            "ishfaResponse"
+        );
+
+    response.textContent =
+        "I knew you were Ishfa. 😌";
+
+
+    setTimeout(() => {
+
+        document
+        .getElementById("page1")
+        .classList
+        .add("hidden");
+
+
+        document
+        .getElementById("page2")
+        .classList
+        .remove("hidden");
+
+    }, 1300);
+
+}
+
+
+
+/* ========================= */
+/* WRONG ANSWER */
+/* ========================= */
+
+function wrongAnswer() {
+
+    const response =
+        document.getElementById(
+            "wrongResponse"
+        );
+
+
+    const messages = [
+
+        "Wrong answer. 😐",
+
+        "WRONG ANSWER. TRY AGAIN.",
+
+        "That wasn't one of the correct options. 🤨",
+
+        "Nope. Absolutely not.",
+
+        "You really thought NO was an option? 💀",
+
+        "Wrong answer again. Click YES. 😭"
+
+    ];
+
+
+    response.textContent =
+
+        messages[
+            Math.floor(
+                Math.random()
+                *
+                messages.length
+            )
+        ];
+
+
+    const btn =
+        document.getElementById(
+            "noBtn"
+        );
+
+
+    btn.style.transform =
+
+        `translate(
+            ${Math.random() * 80 - 40}px,
+            ${Math.random() * 40 - 20}px
+        )`;
+
+}
+
+
+
+/* ========================= */
+/* GO TO BIRTHDAY PAGE */
+/* ========================= */
+
+function goNext() {
+
+    document
+    .getElementById("page2")
+    .classList
+    .add("hidden");
+
+
+    document
+    .getElementById("birthdayPage")
+    .classList
+    .remove("hidden");
+
+
+    createFireworks();
+
+    typeMessage();
+
+}
+
+
+
+/* ========================= */
+/* TYPING ANIMATION */
+/* ========================= */
+
+const birthdayMessage =
+
+"I couldn't give you a surprise, but may your day be filled with happiness, laughter, beautiful memories, and very stupid texts of mine. And don't unbondhu me plis 😭🎂✨";
+
+
+function typeMessage() {
+
+    const element =
+
+        document.getElementById(
+            "typedText"
+        );
+
+
+    const cursor =
+
+        document.getElementById(
+            "cursor"
+        );
+
+
+    let i = 0;
+
+
+    function type() {
+
+        if (
+            i <
+            birthdayMessage.length
+        ) {
+
+            element.textContent +=
+
+                birthdayMessage.charAt(i);
+
+
+            i++;
+
+
+            setTimeout(
+                type,
+                28
+            );
+
+        }
+
+        else {
+
+            setTimeout(() => {
+
+                cursor.style.display =
+                    "none";
+
+            }, 1500);
+
+        }
+
+    }
+
+
+    type();
+
+}
+
+
+
+/* ========================= */
+/* FLOATING BALLOONS */
+/* ========================= */
+
+function createBalloons() {
+
+    const container =
+
+        document.getElementById(
+            "balloons"
+        );
+
+
+    const colors = [
+
+        "#ff83b7",
+
+        "#ffd166",
+
+        "#8ecae6",
+
+        "#cdb4db",
+
+        "#b9fbc0",
+
+        "#ffadad"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 12;
+        i++
+    ) {
+
+        const balloon =
+
+            document.createElement(
+                "div"
+            );
+
+
+        balloon.className =
+            "balloon";
+
+
+        balloon.style.left =
+
+            Math.random()
+            *
+            100
+            +
+            "vw";
+
+
+        balloon.style.background =
+
+            colors[
+                Math.floor(
+                    Math.random()
+                    *
+                    colors.length
+                )
+            ];
+
+
+        balloon.style.animationDuration =
+
+            (
+                9
+                +
+                Math.random() * 8
+            )
+            +
+            "s";
+
+
+        balloon.style.animationDelay =
+
+            (
+                Math.random() * 8
+            )
+            +
+            "s";
+
+
+        container.appendChild(
+            balloon
+        );
+
+    }
+
+}
+
+
+createBalloons();
+
+
+
+/* ========================= */
+/* FIREWORKS */
+/* ========================= */
+
+function firework() {
+
+    const fw =
+
+        document.createElement(
+            "div"
+        );
+
+
+    fw.className =
+        "firework";
+
+
+    const x =
+
+        15
+        +
+        Math.random() * 70;
+
+
+    const y =
+
+        10
+        +
+        Math.random() * 50;
+
+
+    fw.style.left =
+        x + "vw";
+
+
+    fw.style.top =
+        y + "vh";
+
+
+    document.body.appendChild(
+        fw
+    );
+
+
+    const colors = [
+
+        "#ff4d9a",
+
+        "#ffd166",
+
+        "#7bdff2",
+
+        "#cdb4db",
+
+        "#ffffff",
+
+        "#b9fbc0"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 40;
+        i++
+    ) {
+
+        const particle =
+
+            document.createElement(
+                "div"
+            );
+
+
+        particle.className =
+            "particle";
+
+
+        const angle =
+
+            (
+                Math.PI
+                *
+                2
+                /
+                40
+            )
+            *
+            i;
+
+
+        const distance =
+
+            60
+            +
+            Math.random() * 90;
+
+
+        particle.style.background =
+
+            colors[
+                Math.floor(
+                    Math.random()
+                    *
+                    colors.length
+                )
+            ];
+
+
+        particle.style.setProperty(
+
+            "--x",
+
+            Math.cos(angle)
+            *
+            distance
+            +
+            "px"
+
+        );
+
+
+        particle.style.setProperty(
+
+            "--y",
+
+            Math.sin(angle)
+            *
+            distance
+            +
+            "px"
+
+        );
+
+
+        fw.appendChild(
+            particle
+        );
+
+    }
+
+
+    setTimeout(() => {
+
+        fw.remove();
+
+    }, 1500);
+
+}
+
+
+
+function createFireworks() {
+
+    firework();
+
+    setTimeout(
+        firework,
+        500
+    );
+
+    setTimeout(
+        firework,
+        1000
+    );
+
+
+    const interval =
+
+        setInterval(
+            firework,
+            1800
+        );
+
+
+    setTimeout(() => {
+
+        clearInterval(
+            interval
+        );
+
+    }, 12000);
+
+}
+
+</script>
+
+</body>
+</html>
